@@ -45,7 +45,7 @@ public class MySQLAccess {
             preparedStatement.executeUpdate();
 
             preparedStatement = connect
-                    .prepareStatement("SELECT myuser, webpage, datum, summery, COMMENTS from feedback.comments");
+                    .prepareStatement("SELECT myuser, webpage, datum, summary, COMMENTS from feedback.comments");
             resultSet = preparedStatement.executeQuery();
             writeResultSet(resultSet);
 
@@ -88,7 +88,7 @@ public class MySQLAccess {
             // e.g. resultSet.getSTring(2);
             String user = resultSet.getString("myuser");
             String website = resultSet.getString("webpage");
-            String summery = resultSet.getString("summery");
+            String summery = resultSet.getString("summary");
             Date date = resultSet.getDate("datum");
             String comment = resultSet.getString("comments");
             System.out.println("User: " + user);
